@@ -11,9 +11,9 @@ class SentimentAnalysis:
         sentiment = self.doc._.blob.polarity
         sentiment = round(sentiment,2)
         if sentiment > 0:
-            sent_label = "Positive"
+            sent_label = True
         else:
-            sent_label = "Negative"
+            sent_label = False
         return sent_label
     
     def positiveWords(self):
@@ -36,10 +36,10 @@ class SentimentAnalysis:
 
 
 # example usage
-x = SentimentAnalysis("text = 'I had a really horrible day. It was the worst day ever! But every now and then I have a really good day that makes me happy.")
-print(x.sentiment())
-print(x.positiveWords())
-print(x.negative_words())
+# x = SentimentAnalysis("text = 'I had a really horrible day. It was the worst day ever! But every now and then I have a really good day that makes me happy.")
+# print(x.sentiment())
+# print(x.positiveWords())
+# print(x.negative_words())
 
 # pip install -U spacy
 # pip install spacytextblob
