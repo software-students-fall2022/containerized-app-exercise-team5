@@ -61,7 +61,7 @@ def AudioText(int, string):
 
 
 def main():
-	AudioText(1, 'werent-you-listening.wav')
+	AudioText(1, 'this-part-of-my-life-this-little-part-is-called-happiness.wav')
 	
 if __name__ == '__main__':
     sys.exit(main())
