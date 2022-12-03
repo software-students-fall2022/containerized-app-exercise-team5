@@ -1,4 +1,4 @@
-name: Build & Test
+name: Web App Build & Test
 
 # Controls when the workflow will run
 on: [pull_request]
@@ -27,4 +27,5 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
+          cd web-app
           pytest
