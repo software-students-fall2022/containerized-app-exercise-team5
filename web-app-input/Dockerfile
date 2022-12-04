@@ -2,9 +2,9 @@
 
 FROM python:3.8-slim-buster
 
-WORKDIR /web-app
+WORKDIR /web-app-input
 
-COPY requirements.txt requirements.txt
+COPY requirements.txt resquirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
