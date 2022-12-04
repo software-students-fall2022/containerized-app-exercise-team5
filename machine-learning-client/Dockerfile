@@ -5,7 +5,7 @@ FROM python:3.8-slim-buster
 WORKDIR /python-docker
 
 COPY requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 RUN python -m textblob.download_corpora
 RUN python -m spacy download en_core_web_sm
