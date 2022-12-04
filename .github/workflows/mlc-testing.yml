@@ -31,6 +31,8 @@ jobs:
           pip install pytest
           pip install spacy
           pip install spacytextblob
+          python -m textblob.download_corpora
+          python -m spacy download en_core_web_sm
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
