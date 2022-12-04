@@ -34,14 +34,3 @@ class SentimentAnalysis:
                 pass
         return negative_words
 
-
-# example usage
-# x = SentimentAnalysis("text = 'I had a really horrible day. It was the worst day ever! But every now and then I have a really good day that makes me happy.")
-# print(x.sentiment())
-# print(x.positiveWords())
-# print(x.negative_words())
-
-# pip install spacy
-# pip install spacytextblob
-# python -m textblob.download_corpora
-# python -m spacy download en_core_web_sm
