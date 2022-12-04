@@ -11,3 +11,4 @@ Werkzeug==1.0.1
 spacy==2.3.5
 spacytextblob==0.1.0
 pytest==6.2.2
+cmake==3.18.4.post1

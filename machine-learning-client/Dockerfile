@@ -2,7 +2,7 @@
 
 FROM python:3.8-slim-buster
 
-WORKDIR /python-docker
+WORKDIR /machine-learning-client
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
