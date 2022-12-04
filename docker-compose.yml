@@ -1,0 +1,23 @@
+version: '2.12.0'
+services:
+  db:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - 27017:27017
+
+  web-app:
+    build: ./web-app
+    ports:
+      - "4001:4001"
+    depends_on:
+      - db
+  
+  machine-learning-client:
+    build: ./machine-learning-client
+    ports:
+      - "5001:5001"
+    depends_on:
+      - db

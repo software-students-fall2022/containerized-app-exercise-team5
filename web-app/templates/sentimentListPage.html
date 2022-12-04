@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/sentimentListPage.css" />
+  </head>
+  <body>
+    <div class="container my-4">
+      <div class="mb-2">
+        <!-- localhost port number and add url for the page  -->
+        <a class="btn btn-primary" href="#">To Main</a>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sentiment Analysis</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sentiment in sentiments %}
+          <tr>
+            <td>
+              <a href="/sentiment-result-view?id={{sentiment._id}}"
+                >{{ sentiment.text | first_sentence}}</a
+              >
+            </td>
+            <td class="text-one-line">
+              {{ sentiment.createdDate.strftime('%Y-%m-%d')}}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
