@@ -31,7 +31,14 @@
             <span style="color: red">Negative</span>
             {% endif %}
           </div>
-          <div><b>words</b>: {{', '.join(sentiment.words)}}</div>
+          <div>
+            <div style="color: green">
+              <b>Positive Words</b>: {{', '.join(sentiment.positive_words)}}
+            </div>
+            <div style="color: red">
+              <b>Negative Words</b>: {{', '.join(sentiment.negative_words)}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
