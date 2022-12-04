@@ -41,7 +41,7 @@ class SentimentAnalysis:
 # print(x.positiveWords())
 # print(x.negative_words())
 
-# pip install -U spacy
+# pip install spacy
 # pip install spacytextblob
 # python -m textblob.download_corpora
 # python -m spacy download en_core_web_sm
