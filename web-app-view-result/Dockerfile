@@ -2,7 +2,7 @@
 
 FROM python:3.8-slim-buster
 
-WORKDIR /web-app-2
+WORKDIR /web-app-view-result
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
