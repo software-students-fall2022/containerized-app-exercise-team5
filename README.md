@@ -31,7 +31,7 @@ This web application takes user input of speech and translates into text. This s
    ```
 5. Go to the root folder and run the docker container
    ```
-   docker compose up –remove-orphans
+   docker compose up -–remove-orphans
    ```
 6. Now two apps are started. The ML client will run at http://0.0.0.0:5001/. The Web-app will run at http://0.0.0.0:4001/sentiment-list-view. There is also a container for the database.
 7. In the ML client, you can press the record button to store the speech. Then speech will change to text and show on the screen with the sentiment analysis of the speech (text). The sentiment analysis contains whether the sentiment is positive or negative and will also show both positive and negative words.
