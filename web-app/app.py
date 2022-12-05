@@ -18,9 +18,7 @@ db = cxn['containerizedTest']
 
 @app.route('/sentiment-list-view')
 def show_sentiment_list_view():
-	print("reach here")
 	sentiments = db.sentiments.find()
-	print(sentiments)
 
 	return render_template('sentimentListPage.html', sentiments=sentiments)
 
