@@ -6,8 +6,8 @@ from datetime import date
 from bson.objectid import ObjectId
 import os
 import subprocess
-from .speech import *
-from .sentiment_analysis import *
+from speech import *
+from sentiment_analysis import *
 
 app = Flask(__name__)
 
