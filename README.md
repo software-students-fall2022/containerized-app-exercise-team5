@@ -15,4 +15,4 @@ This web application takes user input of speech and translates into text. This s
 - Tiffany Lee: [Github](https://github.com/les5185)
 - Leah Durrett: [Github](https://github.com/howtofly-lab)
 - Ian Liao: [Github](https://github.com/ian-Liaozy)
-- Charlie Xiang: [Github] (https://github.com/xiang-charlie)
+- Charlie Xiang: [Github](https://github.com/xiang-charlie)
