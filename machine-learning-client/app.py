@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, make_response
 from markupsafe import escape
 import pymongo
-# import datetime
 from datetime import date
 from bson.objectid import ObjectId
 import os
@@ -45,7 +44,7 @@ def submit_record(recording):
         "isPositive": sent,
         "positive_words": pos,
         "negative_words": neg,
-        # "createdDate": date.today()
+        "createdDate": str(date.today())
     }
     db.sentiments.insert_one(doc)
 
