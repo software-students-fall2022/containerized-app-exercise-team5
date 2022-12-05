@@ -12,7 +12,6 @@ app = Flask(__name__, static_url_path='/static')
 app.jinja_env.filters['first_sentence'] = extract_first_sentence
 
 cxn = pymongo.MongoClient("db",27017)
-
 db = cxn['containerizedTest']
 
 
