@@ -104,7 +104,7 @@ utils.py                  2      0   100%
 TOTAL                    43      6    86%
 ```
 
-##### Code coverage for this project
+<b> Code coverage for this project </b>
 
 Machine Learning Client code coverage:
 
