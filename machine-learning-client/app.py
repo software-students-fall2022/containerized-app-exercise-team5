@@ -8,6 +8,7 @@ import os
 import subprocess
 from .speech import *
 from .sentiment_analysis import *
+import pyaudio
 
 app = Flask(__name__)
 
