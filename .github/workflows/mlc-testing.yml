@@ -27,14 +27,14 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          apt-get update
+          apt-get install portaudio19-dev -y
           python -m pip install --upgrade pip
           pip install pytest
           pip install spacy
           pip install spacytextblob
           python -m textblob.download_corpora
           python -m spacy download en_core_web_sm
-          apt-get update
-          apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
           pip install pyaudio
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
