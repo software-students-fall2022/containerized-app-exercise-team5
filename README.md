@@ -1,6 +1,6 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9337582&assignment_repo_type=AssignmentRepo)
 
-![ML Tests](https://github.com/software-students-fall2022/containerized-app-exercise-team5/actions/workflows/ml-tests.yaml/badge.svg)
+![ML Tests](https://github.com/software-students-fall2022/containerized-app-exercise-team5/actions/workflows/ml-tests.yaml/badge.svg?event=push)
 ![Web App Tests](https://github.com/software-students-fall2022/containerized-app-exercise-team5/actions/workflows/web-app-tests.yaml/badge.svg)
 
 # Containerized App Exercise
@@ -26,9 +26,13 @@ This web application takes user input of speech and translates into text. This s
 2. Clean the unused mongo DB containers on Docker Desktop
 3. Pull the latest version on the main branch
 4. Go to the root folder and build the docker container
-   `docker compose build`
+   ```
+   docker compose build
+   ```
 5. Go to the root folder and run the docker container
-   `docker compose up –remove-orphans`
+   ```
+   docker compose up –remove-orphans
+   ```
 6. Now two apps are started. The ML client will run at http://0.0.0.0:5001/. The Web-app will run at http://0.0.0.0:4001/sentiment-list-view. There is also a container for the database.
 7. In the ML client, you can press the record button to store the speech. Then speech will change to text and show on the screen with the sentiment analysis of the speech (text). The sentiment analysis contains whether the sentiment is positive or negative and will also show both positive and negative words.
 8. After analyzing different sentiments with the ML client, you can view all past results in a list view. Once you click one sentiment analysis item, it’ll show you the text and sentiment analysis for that specific item.
@@ -38,13 +42,21 @@ This web application takes user input of speech and translates into text. This s
 ### Webapp
 
 1. Go to the web-app directory
-   `cd web-app`
+   ```
+   cd web-app
+   ```
 2. Run the following command line
-   `python3 -m pytest`
+   ```
+   python3 -m pytest
+   ```
 
 ### ML Client
 
 1. Go to the machine-learning-client directory
-   ` cd machine-learning-client`
+   ```
+    cd machine-learning-client
+   ```
 2. Run the following command line
-   ` python3 -m pytest`
+   ```
+   python3 -m pytest
+   ```
