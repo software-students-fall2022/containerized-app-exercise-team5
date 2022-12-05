@@ -4,7 +4,7 @@ services:
     container_name: db
     image: mongo:latest
     volumes:
-      - ./db/init-mongo.js:/docker-entrypoint-init-mongo.d/init-mongo.js:ro 
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     ports:
       - "27017:27017"
 
