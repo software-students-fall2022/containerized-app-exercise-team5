@@ -20,7 +20,9 @@
     <div class="container my-4">
       <div class="mb-2">
         <!-- localhost port number and add url for the page  -->
-        <a class="btn btn-primary" href="../../machine-learning-client/templates/record.html">To Main</a>
+        <a class="btn btn-primary" href="http://0.0.0.0:5001/record.html"
+          >To Main</a
+        >
       </div>
       <table class="table">
         <thead>
@@ -37,8 +39,7 @@
                 >{{ sentiment.text | first_sentence}}</a
               >
             </td>
-            <td class="text-one-line">
-            </td>
+            <td class="text-one-line"></td>
           </tr>
           {% endfor %}
         </tbody>
