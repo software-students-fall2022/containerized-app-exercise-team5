@@ -8,6 +8,7 @@ import os
 import subprocess
 from speech import *
 from sentiment_analysis import *
+import speech_recognition as sr
 
 app = Flask(__name__)
 
@@ -23,12 +24,14 @@ def record():
 @app.route('/record')
 def recording():
 
-    r = AudioText(0, "")
+    # r = AudioText(0, "")
+
+    r = "Today is turning out to be a very bad day and absolutely awful in fact"
 
     return render_template('record.html', speechText = r)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/submit/<recording>', methods=['POST']) # 
 def submit_record(recording):
 
     r = SentimentAnalysis(recording)
@@ -42,7 +45,7 @@ def submit_record(recording):
         "isPositive": sent,
         "positive_words": pos,
         "negative_words": neg,
-        "createdDate": date.today()
+        # "createdDate": date.today()
     }
     db.sentiments.insert_one(doc)
 
