@@ -17,6 +17,9 @@ services:
   
   machine-learning-client:
     build: ./machine-learning-client
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     ports:
       - "5001:5001"
     depends_on:
