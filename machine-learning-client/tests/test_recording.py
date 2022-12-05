@@ -5,9 +5,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import speech
 
+sys.path.append("/test")
+
 class Tests:
 		
 	def test_1(self):
+		print(sys.path)
 		output = speech.AudioText(1, 'werent-you-listening.wav')
 		assert output == "weren't you listening"
 		
