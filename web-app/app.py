@@ -28,6 +28,7 @@ def show_sentiment_result_view():
 
 	return render_template('sentimentResultPage.html', sentiment=sentiment)
 
+
 # run the app
 if __name__ == "__main__":
 	app.run()

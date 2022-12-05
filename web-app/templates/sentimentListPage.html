@@ -20,7 +20,7 @@
     <div class="container my-4">
       <div class="mb-2">
         <!-- localhost port number and add url for the page  -->
-        <a class="btn btn-primary" href="http://0.0.0.0:5001/record.html"
+        <a class="btn btn-primary" href="http://0.0.0.0:5001/"
           >To Main</a
         >
       </div>
@@ -35,11 +35,13 @@
           {% for sentiment in sentiments %}
           <tr>
             <td>
-              <a href="/sentiment-result-view?id={{sentiment._id}}"
-                >{{ sentiment.text | first_sentence}}</a
-              >
+              <a href="/sentiment-result-view?id={{sentiment._id}}">
+                {{ sentiment.text | first_sentence}}
+              </a>
             </td>
-            <td class="text-one-line"></td>
+            <td class="text-one-line">
+              {{ sentiment.createdDate }}
+            </td>
           </tr>
           {% endfor %}
         </tbody>
