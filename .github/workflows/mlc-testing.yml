@@ -33,7 +33,9 @@ jobs:
           pip install spacytextblob
           python -m textblob.download_corpora
           python -m spacy download en_core_web_sm
-          pip install PyAudio
+          apt-get update
+          apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
+          pip install pyaudio
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |

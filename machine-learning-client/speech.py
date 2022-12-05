@@ -1,10 +1,11 @@
 # Python program to translate
 # speech to text and text to speech
  
- 
+import pyaudio
 import speech_recognition as sr
 import pyttsx3
 import sys
+
 # Initialize the recognizer
 r = sr.Recognizer()
  
