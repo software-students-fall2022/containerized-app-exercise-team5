@@ -12,11 +12,14 @@ app = Flask(__name__, static_url_path='/static')
 app.jinja_env.filters['first_sentence'] = extract_first_sentence
 
 cxn = pymongo.MongoClient("db, 27017")
-db = cxn["containerizedTest"]
+db = cxn['containerizedTest']
+
 
 @app.route('/sentiment-list-view')
 def show_sentiment_list_view():
+	print("reach here")
 	sentiments = db.sentiments.find()
+	print(sentiments)
 
 	return render_template('sentimentListPage.html', sentiments=sentiments)
 
