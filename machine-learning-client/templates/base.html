@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speech-to-Text Sentiment Recognition</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+      <header>
+        <h1>Web App: Speech-to-Text Sentiment Recognition</h1>
+      </header>
+      <main>{% block container %} {% endblock %}</main>
+      <footer>
+        <p>
+          If you would like to see the recordings that we have so far, as well as their analysis results, click 
+          <a href="../../web-app/templates/sentimentListPage.html">here!</a>
+          <!-- <a href="">here!</a> -->
+        </p>
+        <p>
+          Please note that this web app is still under construction!
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="../main.js"></script>
+  </body>
+</html>
