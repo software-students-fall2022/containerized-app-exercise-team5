@@ -6,22 +6,10 @@ from datetime import date
 from bson.objectid import ObjectId
 import os
 import subprocess
-from speech import *
-from sentiment_analysis import *
+from .speech import *
+from .sentiment_analysis import *
 
 app = Flask(__name__)
-
-# import credentials
-# config = credentials.get()
-
-# if config['FLASK_ENV'] == 'development':
-#     app.debug = True
-
-# connection = pymongo.MongoClient(config['MONGO_HOST'], 27017, 
-#                                 username=config['MONGO_USER'],
-#                                 password=config['MONGO_PASSWORD'],
-#                                 authSource=config['MONGO_DBNAME'])
-# db = connection[config['MONGO_DBNAME']]
 
 cxn = pymongo.MongoClient("db", 27017)
 db = cxn["containerizedTest"]
