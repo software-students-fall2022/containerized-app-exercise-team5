@@ -39,24 +39,73 @@ This web application takes user input of speech and translates into text. This s
 
 ## How to Run Pytests
 
-### Webapp
+### 1. Active virtual environment
 
-1. Go to the web-app directory
-   ```
-   cd web-app
-   ```
-2. Run the following command line
-   ```
-   python3 -m pytest
-   ```
+Activate a virtual environmennt in the root directory by using this command line
 
-### ML Client
+```
+python3 -m venv env
+source env/bin/activate
+```
 
-1. Go to the machine-learning-client directory
-   ```
-    cd machine-learning-client
-   ```
-2. Run the following command line
-   ```
-   python3 -m pytest
-   ```
+### 2. Install dependencies
+
+Install the dependencies to run pytest by using the following command line
+
+```
+pip install -r requirements.txt
+```
+
+### 3. Go to the directory you want to test
+
+#### Web app
+
+Go to the web-app directory
+
+```
+cd web-app
+```
+
+#### Machine Learning Client
+
+Go to the machine-learning-client directory
+
+```
+cd machine-learning-client
+```
+
+### 4. Run pytest
+
+Run the following command line
+
+```
+python3 -m pytest
+```
+
+### 5. Check the code coverage report
+
+Run the following commannd line to see the code coverage report
+
+```
+coverage report -m
+```
+
+Below is the example code coverage report
+
+```
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+app.py                   20      6    70%   20-22, 26-29, 34
+tests/__init__.py         0      0   100%
+tests/test_app.py         7      0   100%
+tests/test_utils.py      14      0   100%
+utils.py                  2      0   100%
+---------------------------------------------------
+TOTAL                    43      6    86%
+```
+
+<b> Code coverage for this project </b>
+
+Machine Learning Client code coverage:
+
+Web App code coverage: 86%
