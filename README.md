@@ -92,7 +92,7 @@ pip install -r requirements.txt
 Run the following command line. Make sure pytest is downloaded (`pip install pytest`)
 
 ```
-python3 -m pytest
+coverage run --omit */site-packages/* -m pytest
 ```
 
 ### 5. Check the code coverage report
@@ -116,3 +116,7 @@ utils.py                  2      0   100%
 ---------------------------------------------------
 TOTAL                    43      6    86%
 ```
+
+<b> Code Coverage for this Project</b>
+Machine Learning Client: 91%
+Web App: 86%
