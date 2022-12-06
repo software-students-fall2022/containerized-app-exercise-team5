@@ -3,16 +3,17 @@
 {% block container %}
 <h2>Welcome!</h2>
 <p>
-    Here, you can record yourself speaking or reading some text and submit that recording for sentiment analysis. Start 
-    recording by clicking the start button. When you're finished recording, simply hit the 'enter' key. Give it a try!
+    Here, you can upload recordings of yourself speaking or reading some text and submit that recording for sentiment 
+    analysis. Give it a try! Attempt 1.0.0
 </p>
-<button id="recButton"></button>
-<form action="{{ url_for('recording')}}" id="start">
-    <input type="submit" value="Start" />
+<form method="POST" action="{{ url_for('recorded')}}" enctype="multipart/form-data">
+    <input type="file" id="frecording" name="frecording" accept=".wav,.mp3,audio/*">
+    <input type="submit" value="Upload" />
 </form>
 <p>
-    Please remember to speak loudly, and as clearly as possible!
+    In your recordings, please remember to speak loudly, and as clearly as possible!
 </p>
+</br>
 {% if speechText %}
 <p>
     It looks like you recorded something! Did you say: {{ speechText }}?
@@ -20,12 +21,10 @@
 {% endif %}
 </br>
 <p>
-    Finished recording? Submit by clicking the button below! If we heard you wrong, feel free to record again!
+    Satisfied with what your recording says? Submit by clicking the button below! If we heard you wrong, feel free to 
+    record again!
 </p>
 <form method="POST" action="{{ url_for('submit_record', recording=speechText)}}">
     <input type="submit" name="create-btn" value="Submit" />
 </form>
-<!-- <form action="{{ url_for('submit_record', recording=speechText)}}">
-    <input type="submit" value="Submit" />
-</form> -->
 {% endblock %}

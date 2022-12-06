@@ -6,7 +6,7 @@ import pyttsx3
 import sys
 
 # Initialize the recognizer
-r = sr.Recognizer()
+# r = sr.Recognizer()
  
 # Function to convert text to
 # speech
@@ -21,6 +21,8 @@ def SpeakText(command):
 # Loop infinitely for user to
 # speak
 def AudioText(int, string):
+
+	r = sr.Recognizer()
 	#print(string);
 	#var audio;
 	if (int == 0):
@@ -31,7 +33,7 @@ def AudioText(int, string):
 			#try:
 		 
 				# use the microphone as source for input.
-				with sr.Microphone() as source2:
+				with sr.Microphone(device_index=0) as source2:
 			 
 					# wait for a second to let the recognizer
 					# adjust the energy threshold based on
@@ -52,7 +54,7 @@ def AudioText(int, string):
 
 	print(MyText)
 	#SpeakText(MyText)
-	return MyText;
+	return MyText
 		#except sr.RequestError as e:
 			#print("Could not request results; {0}".format(e))
 		 

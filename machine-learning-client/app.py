@@ -8,6 +8,10 @@ import subprocess
 from speech import *
 from sentiment_analysis import *
 import speech_recognition as sr
+import random as rand
+import speech_recognition as sr
+import pyttsx3
+import sys
 
 app = Flask(__name__)
 
@@ -20,14 +24,20 @@ def record():
     return render_template('record.html')
 
 
-@app.route('/record')
-def recording():
+@app.route('/recorded', methods=['POST'])
+def recorded():
 
-    # r = AudioText(0, "")
+    recording = request.files['frecording']
 
-    r = "Today is turning out to be a very bad day and absolutely awful in fact"
+    r = sr.Recognizer()
 
-    return render_template('record.html', speechText = r)
+    with sr.AudioFile(recording) as source:
+        audio = r.record(source)
+
+    MyText = r.recognize_google(audio)
+    MyText = MyText.lower()
+
+    return render_template('record.html', speechText = MyText)
 
 
 @app.route('/submit/<recording>', methods=['POST']) # 
