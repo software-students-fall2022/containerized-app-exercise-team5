@@ -20,43 +20,45 @@ This web application takes user input of speech and translates into text. This s
 - Ian Liao: [Github](https://github.com/ian-Liaozy)
 - Charlie Xiang: [Github](https://github.com/xiang-charlie)
 
-## How to Run the Program
+## Installations
 
 1. Make sure Docker Desktop is installed. If not, (click [here](https://docs.docker.com/desktop/install/windows-install/) for windows and [here](https://docs.docker.com/desktop/install/mac-install/) for mac)
-2. Clean the unused mongo DB containers on Docker Desktop
-3. Pull the latest version on the main branch
-4. Go to the root folder and build the docker container
+2. Make sure PyAudio is installed. Find the instructions for how to install PyAudio [here](https://pypi.org/project/PyAudio/).
+
+## How to Run the Program
+
+1. Clean the unused mongo DB containers on Docker Desktop
+2. Pull the latest version on the main branch
+3. Go to the root folder and build the docker container
    ```
    docker compose build
    ```
-5. Go to the root folder and run the docker container
+4. Go to the root folder and run the docker container
    ```
    docker compose up -–remove-orphans
    ```
-6. Now two apps are started. The ML client will run at http://0.0.0.0:5001/. The Web-app will run at http://0.0.0.0:4001/sentiment-list-view. There is also a container for the database.
-7. In the ML client, you can press the record button to store the speech. Then speech will change to text and show on the screen with the sentiment analysis of the speech (text). The sentiment analysis contains whether the sentiment is positive or negative and will also show both positive and negative words.
-8. After analyzing different sentiments with the ML client, you can view all past results in a list view. Once you click one sentiment analysis item, it’ll show you the text and sentiment analysis for that specific item.
+5. Now two apps are started. The ML client will run at http://0.0.0.0:5001/. The Web App will run at http://0.0.0.0:4001/sentiment-list-view. There is also a container for the database.
+6. In the terminal, navigate to the ML client directory and run the recording function by entering the following command:
+```
+python3 record.py
+```
+This will allow you to record a `.wav` file, which will be saved into the current directory.
+7. In the ML client, you can upload the voice recording from your local machine. The recording will change to text and will be displayed on the screen. When you are satisfied with what the text says, click the submit button.
+8. Following submission, there are two links displayed on the screen, one of which redirects you to the Web App and allows you to view the result of the sentiment analysis.
+9. Click on a statement to see the specifics of the sentiment analysis results. This includes whether the sentiment is positive or negative, and will also show both positive and negative words.
 
 ## How to Run Pytests
 
 ### 1. Active virtual environment
 
-Activate a virtual environmennt in the root directory by using this command line
+Activate a virtual environment in the root directory by using this command line
 
 ```
 python3 -m venv env
 source env/bin/activate
 ```
 
-### 2. Install dependencies
-
-Install the dependencies to run pytest by using the following command line
-
-```
-pip install -r requirements.txt
-```
-
-### 3. Go to the directory you want to test
+### 2. Go to the directory you want to test
 
 #### Web app
 
@@ -72,6 +74,14 @@ Go to the machine-learning-client directory
 
 ```
 cd machine-learning-client
+```
+
+### 3. Install dependencies
+
+Install the dependencies to run pytest by using the following command line
+
+```
+pip install -r requirements.txt
 ```
 
 ### 4. Run pytest
