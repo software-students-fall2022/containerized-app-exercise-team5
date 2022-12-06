@@ -9,7 +9,7 @@ Build a containerized app that uses machine learning. See [instructions](./instr
 
 ## Introduction
 
-This web application takes user input of speech and translates into text. This speech-to-text program then analyzes the sentiment of the speech, whether it is positive or negative. Then it shows the results of the sentiment analysis along with both negative and positive words.
+This console recording app takes user input of speech to record the audio file. Then the web translates the audio recording into text. This machine-learning web app then analyzes the sentiment of the speech, whether it is positive or negative. Then it shows the results of the sentiment analysis along with both negative and positive words. The web app also shows the past history of all sentiment analysis results.
 
 ## Authors
 
@@ -39,10 +39,13 @@ This web application takes user input of speech and translates into text. This s
    ```
 5. Now two apps are started. The ML client will run at http://0.0.0.0:5001/. The Web App will run at http://0.0.0.0:4001/sentiment-list-view. There is also a container for the database.
 6. In the terminal, navigate to the ML client directory and run the recording function by entering the following command:
+
 ```
 python3 record.py
 ```
+
 This will allow you to record a `.wav` file, which will be saved into the current directory.
+
 7. In the ML client, you can upload the voice recording from your local machine. The recording will change to text and will be displayed on the screen. When you are satisfied with what the text says, click the submit button.
 8. Following submission, there are two links displayed on the screen, one of which redirects you to the Web App and allows you to view the result of the sentiment analysis.
 9. Click on a statement to see the specifics of the sentiment analysis results. This includes whether the sentiment is positive or negative, and will also show both positive and negative words.
@@ -86,7 +89,7 @@ pip install -r requirements.txt
 
 ### 4. Run pytest
 
-Run the following command line
+Run the following command line. Make sure pytest is downloaded (`pip install pytest`)
 
 ```
 python3 -m pytest
