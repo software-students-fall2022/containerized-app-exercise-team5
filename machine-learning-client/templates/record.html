@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<h2>Welcome!</h2>
+<p>
+    Here, you can upload recordings of yourself speaking or reading some text and submit that recording for sentiment 
+    analysis. Give it a try! Attempt 1.0.0
+</p>
+<form method="POST" action="{{ url_for('recorded')}}" enctype="multipart/form-data">
+    <input type="file" id="frecording" name="frecording" accept=".wav,.mp3,audio/*">
+    <input type="submit" value="Upload" />
+</form>
+<p>
+    In your recordings, please remember to speak loudly, and as clearly as possible!
+</p>
+</br>
+{% if speechText %}
+<p>
+    It looks like you recorded something! Did you say: {{ speechText }}?
+</p>
+{% endif %}
+</br>
+<p>
+    Satisfied with what your recording says? Submit by clicking the button below! If we heard you wrong, feel free to 
+    record again!
+</p>
+<form method="POST" action="{{ url_for('submit_record', recording=speechText)}}">
+    <input type="submit" name="create-btn" value="Submit" />
+</form>
+{% endblock %}
