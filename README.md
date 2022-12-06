@@ -118,5 +118,6 @@ TOTAL                    43      6    86%
 ```
 
 <b> Code Coverage for this Project</b>
-Machine Learning Client: 91%
-Web App: 86%
+
+- Machine Learning Client: 91%
+- Web App: 86%
